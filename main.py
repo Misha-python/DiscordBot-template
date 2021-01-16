@@ -6,18 +6,18 @@ from style import *
 
 TOKEN = settings ['token']
 ver = '0.0.0'
-build_info = 'Non - govnocode build' #It's specific Russian joke
+build_info = 'Non - govnocode build' #It's a specific Russian joke
 
 bot = commands.Bot (command_prefix = settings ['prefix'])
 
-def add_command (name): # Only add to special dict
+def add_command (name): # Only to add to special dict
     def adder (func):
         add_command.commands_dict [name] = func
 
         return func
     return adder
 
-def add_egg (name): #Easter eggs around a classic commands, but without prefix see more in documentation (???)
+def add_egg (name): #Easter eggs like a classic commands, but without prefix see more in documentation (???)
     def adder_ (func):
         add_egg.egg_dict [name] = func
 
@@ -37,7 +37,7 @@ async def on_message (message):
         return
 
     if message.content.lower () == 'help':
-        await message.channel.send ('Type `!help` to get help')
+        await message.channel.send (f'Type `{settings ["prefix"]}help` to get help')
 
         return
 
@@ -51,7 +51,7 @@ async def on_message (message):
                 break
 
         else:
-            await message.channel.send ('No that command')
+            await message.channel.send ('unknow command')
 
         return
 
