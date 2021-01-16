@@ -1,1 +1,1 @@
-# DiscordBotd-template
+# **DiscordBot-template**
